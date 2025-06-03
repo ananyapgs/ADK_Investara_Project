@@ -17,7 +17,7 @@ This project is a static web application aimed at visualizing and guiding users 
    ```bash
    git clone https://github.com/yourusername/investara.git
    cd investara
-
+  ```
 ---
 
 ##🔄 Navigation Flow
