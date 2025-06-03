@@ -12,7 +12,7 @@ This project is a static web application aimed at visualizing and guiding users 
 
 ---
 
-##🔄 Navigation Flow
+## 🔄 Navigation Flow
 index.html → Click "Get Started" ➝ finance-guide.html
 finance-guide.html → Click "Return" ➝ index.html
 finance-guide.html → Click further options (or next) ➝ portfolio.html
@@ -20,7 +20,7 @@ portfolio.html → Click "Return" ➝ finance-guide.html
 
 ---
 
-##🖼️ Features
+## 🖼️ Features
 Modern responsive layout
 Informative UI with illustrated finance advice
 Visual representation of portfolio profit/loss
