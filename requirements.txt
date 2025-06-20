@@ -8,4 +8,5 @@ streamlit
 matplotlib
 pandas
 fastapi
+deprecated
 uvicorn
