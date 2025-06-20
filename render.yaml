@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nifty-fastapi-site
+    name: google-adk-agent-site
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn fast_api:app --host 0.0.0.0 --port 10000
+    startCommand: cd Agent_Kit && adk web
