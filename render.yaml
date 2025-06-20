@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: google-adk-agent-app
+    name: investara-frontend
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: cd Agent_Kit && adk web
+    startCommand: uvicorn main:app --host=0.0.0.0 --port=10000
