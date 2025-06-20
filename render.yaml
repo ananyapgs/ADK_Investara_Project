@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: google-adk-agent-site
+    name: google-adk-agent-app
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: cd Agent_Kit && adk web
