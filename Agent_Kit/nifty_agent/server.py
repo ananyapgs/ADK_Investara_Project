@@ -6,13 +6,12 @@ from pathlib import Path
 
 app = FastAPI()
 
-# Base directory to locate static files
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+# ✅ Base directory (Agent_Kit/)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Static file mounts
 app.mount("/css_style", StaticFiles(directory=BASE_DIR / "css_styles"), name="css")
 app.mount("/images", StaticFiles(directory=BASE_DIR / "images"), name="images")
-app.mount("/Agent_Kit", StaticFiles(directory=BASE_DIR / "Agent_Kit"), name="agent_kit")
 
 # Serve static pages
 @app.get("/")
