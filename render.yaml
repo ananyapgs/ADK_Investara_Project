@@ -1,7 +1,17 @@
 services:
   - type: web
-    name: investara
+    name: investara-app
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn Agent_Kit.fast_api:app --host 0.0.0.0 --port 10000
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      adk web
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
     plan: free
+    autoDeploy: true
