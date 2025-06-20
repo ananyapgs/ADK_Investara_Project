@@ -4,21 +4,31 @@ from fastapi.responses import FileResponse
 from google.adk.app import create_app
 import os
 
-# ✅ Create app using Google ADK (loads your agents like nifty_agent)
+# ✅ Create ADK app
 adk_app = create_app()
 
-# ✅ Create a wrapper FastAPI app
+# ✅ Create main FastAPI app
 app = FastAPI()
 
 # ✅ Mount ADK app at /adk
 app.mount("/adk", adk_app)
 
-# ✅ Serve frontend files (adjust path if your HTML is one level up)
+# ✅ Set up base directory
 frontend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+# ✅ Serve static folders
+app.mount("/css_styles", StaticFiles(directory=os.path.join(frontend_dir, "css_styles")), name="css")
+app.mount("/images", StaticFiles(directory=os.path.join(frontend_dir, "images")), name="images")
 
-# ✅ Optional: serve index.html directly at root
+# ✅ Serve HTML pages
 @app.get("/")
 def root():
     return FileResponse(os.path.join(frontend_dir, "index.html"))
+
+@app.get("/navigation")
+def navigation():
+    return FileResponse(os.path.join(frontend_dir, "navigation.html"))
+
+@app.get("/visualization")
+def visualization():
+    return FileResponse(os.path.join(frontend_dir, "visualization.html"))
