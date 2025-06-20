@@ -1,0 +1,3 @@
+nifty50_tickers = [
+    'RELIANCE.NS', 'TCS.NS', 'HDFCBANK.NS', 'ICICIBANK.NS', 'KOTAKBANK.NS'
+]
