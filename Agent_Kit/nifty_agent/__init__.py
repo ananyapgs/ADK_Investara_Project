@@ -1,1 +1,1 @@
-from .tools import update_nifty50_data
+from nifty_agent.agent import root_agent
