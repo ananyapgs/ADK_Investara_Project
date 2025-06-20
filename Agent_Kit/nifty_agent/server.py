@@ -6,7 +6,7 @@ from google.adk import Agent
 app = FastAPI()
 
 # ✅ Mount static files
-app.mount("/css_style", StaticFiles(directory="css_style"), name="css")
+app.mount("/css_style", StaticFiles(directory="../../css_styles"), name="css")
 app.mount("/images", StaticFiles(directory="images"), name="images")
 app.mount("/Agent_Kit", StaticFiles(directory="Agent_Kit"), name="agent_kit")
 
