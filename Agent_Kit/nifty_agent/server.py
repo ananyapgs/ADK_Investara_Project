@@ -2,28 +2,31 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from google.adk import Agent
+from pathlib import Path
 
 app = FastAPI()
 
-# ✅ Mount static files
-app.mount("/css_style", StaticFiles(directory="../../css_styles"), name="css")
-app.mount("/images", StaticFiles(directory="images"), name="images")
-app.mount("/Agent_Kit", StaticFiles(directory="Agent_Kit"), name="agent_kit")
+# Base directory to locate static files
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-# ✅ Serve index.html on "/"
+# Static file mounts
+app.mount("/css_style", StaticFiles(directory=BASE_DIR / "css_styles"), name="css")
+app.mount("/images", StaticFiles(directory=BASE_DIR / "images"), name="images")
+app.mount("/Agent_Kit", StaticFiles(directory=BASE_DIR / "Agent_Kit"), name="agent_kit")
+
+# Serve static pages
 @app.get("/")
 def read_root():
-    return FileResponse("index.html")
+    return FileResponse(BASE_DIR / "index.html")
 
-# ✅ Add other pages if needed
 @app.get("/navigation")
 def navigation():
-    return FileResponse("navigation.html")
+    return FileResponse(BASE_DIR / "navigation.html")
 
 @app.get("/visualization")
 def visualization():
-    return FileResponse("visualization.html")
+    return FileResponse(BASE_DIR / "visualization.html")
 
-# ✅ Register your ADK agent
-from nifty_agent.agent import root_agent  # 👈 or your actual agent
+# Register agent
+from nifty_agent.agent import root_agent
 root_agent.mount_to_app(app)
