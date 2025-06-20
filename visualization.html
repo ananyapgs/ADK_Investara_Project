@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Investara - Portfolio Insight</title>
+  <link rel="stylesheet" href="css_style/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header">
+    <div class="logo-section">
+     <a href="index.html"><img  src="images/header_img.png" alt="Illustration" class="illustration" /></a> 
+      <h1>Investara <span>Your Smart Financial Assistant . . . . . . . . . . . . .</span></h1>
+    </div>
+  </div>
+  </header>
+<div class="return-wrapper">
+  <a href="navigation.html">
+    <img src="images/return_img.png" alt="Return" class="return-img">
+  </a>
+</div>
+<div>
+   <div >
+      <h2 style="text-align: center;">Market Strategy Guide</h2>
+      <h5 style="text-align: center;">Hey! I’ve analyzed your portfolio graph</h5>
+   </div>
+<img src="Agent_Kit/nifty_agent/data/nifty50_plot.png" alt="Nifty50 Plot" style="height: 300px; width: 500px; display: block; margin: 0 auto;" />
+</div>
+<div class="chat-section" style="width: 100%; height: 500px;">
+  <iframe 
+    src="http://localhost:8000/dev-ui/?app=nifty_agent"
+    style="width: 100%; height: 100%; border: none; border-radius: 12px;"
+    loading="lazy"
+    title="Visualization Agent"
+  ></iframe>
+</div>
+  <footer>
+    <p>© 2025 Investara by Ananya P. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
